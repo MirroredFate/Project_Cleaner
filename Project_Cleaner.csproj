@@ -82,7 +82,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Dani\Scripts\DragAndDrop.cs" />
-    <Compile Include="Assets\Vik\Sponge.cs" />
+    <Compile Include="Assets\Dani\Scripts\DragAndDropV2.cs" />
+    <Compile Include="Assets\Dani\Scripts\TimerBehaviour.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
