@@ -100,6 +100,8 @@
 -define:UNITY_TEAM_LICENSE
 -define:ENABLE_VSTU
 Assets/Dani/Scripts/DragAndDrop.cs
+Assets/Dani/Scripts/DragAndDropV2.cs
+Assets/Dani/Scripts/TimerBehaviour.cs
 -r:"C:\Program Files\Unity\Editor\Data\Mono\lib\mono\unity\System.Runtime.Serialization.dll"
 -r:"C:\Program Files\Unity\Editor\Data\Mono\lib\mono\unity\System.Xml.Linq.dll"
 -r:"C:\Program Files\Unity\Editor\Data\Mono\lib\mono\unity\UnityScript.dll"
