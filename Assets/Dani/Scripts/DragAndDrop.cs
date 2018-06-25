@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class DragAndDrop : MonoBehaviour {
 
-    private bool _mouseState;
+    private bool mouseState;
+    private bool IsColliding = false;
+    private Vector3 lastPos;
+
     public GameObject Target;
     public Vector3 screenSpace;
     public Vector3 offset;
+
 
     // Use this for initialization
     void Start()
@@ -24,16 +28,16 @@ public class DragAndDrop : MonoBehaviour {
             RaycastHit hitInfo;
             if (Target == GetClickedObject(out hitInfo))
             {
-                _mouseState = true;
+                mouseState = true;
                 screenSpace = Camera.main.WorldToScreenPoint(Target.transform.position);
                 offset = Target.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenSpace.z));
             }
         }
         if (Input.GetMouseButtonUp(0))
         {
-            _mouseState = false;
+            mouseState = false;
         }
-        if (_mouseState)
+        if (mouseState)
         {
             //keep track of the mouse position
             var curScreenSpace = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenSpace.z);
@@ -42,10 +46,32 @@ public class DragAndDrop : MonoBehaviour {
             var curPosition = Camera.main.ScreenToWorldPoint(curScreenSpace) + offset;
 
             //update the position of the object in the world
-            Target.transform.position = curPosition;
+
+            if(IsColliding == false)
+            {
+                Target.transform.position = curPosition;
+
+            }
+
+
         }
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        lastPos = Target.transform.position;
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        IsColliding = true;
+        Target.transform.position = lastPos;
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        IsColliding = false;
+    }
 
     GameObject GetClickedObject(out RaycastHit hit)
     {
