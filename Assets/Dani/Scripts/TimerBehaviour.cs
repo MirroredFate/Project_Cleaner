@@ -9,24 +9,35 @@ public class TimerBehaviour : MonoBehaviour {
     public GameObject gameOverScreen;
     public int startTime = 60;
 
+    private string timeText;
     private float time;
+    private float intTime;
     private bool gameOver = false;
 
 	// Use this for initialization
 	void Start () {
         time = startTime;
-	}
+        intTime = startTime;
+    }
 	
 	// Update is called once per frame
 	void Update () {
         if (!gameOver)
         {
             time -= Time.deltaTime;
+            intTime -= Time.deltaTime;
+        }
+        if(intTime >= 10)
+        {
+            timeText = "" + (int)intTime;
+        }
+        if(intTime < 10)
+        {
+            timeText = time.ToString();
         }
 
-        timerText.text = time.ToString();
 
-        if(time <= 0)
+        if (time <= 0)
         {
             time = 0.0f;
             gameOver = true;
@@ -40,5 +51,7 @@ public class TimerBehaviour : MonoBehaviour {
         {
             gameOverScreen.SetActive(false);
         }
-	}
+
+        timerText.text = timeText;
+    }
 }
