@@ -23,6 +23,8 @@ public class Trashbin : MonoBehaviour {
         if (Physics.Linecast(transform.position, target.position, out hit))
         {
             Debug.Log("blocked by: " + hit.transform.gameObject.name);
+
+
         }
     }
 }
