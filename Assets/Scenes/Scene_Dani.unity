@@ -438,7 +438,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf6a00a75db514d4b98a30c3ea4226eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cleaningSpeed: 0.537
+  scoreManager: {fileID: 1648217792}
+  cleaningSpeed: 0.5
 --- !u!23 &494341858
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1434,7 +1435,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerText: {fileID: 1867159091}
   gameOverScreen: {fileID: 1880461734}
-  startTime: 15
+  startTime: 60
 --- !u!114 &1648217787
 MonoBehaviour:
   m_ObjectHideFlags: 0
