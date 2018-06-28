@@ -5,6 +5,7 @@ using UnityEngine;
 public class Sponge : MonoBehaviour {
 
     public ScoreManager scoreManager;
+    public CursorController cursorController;
 
     [Range(0.1f, 1f)]
     public float cleaningSpeed = 0.5f;
@@ -17,7 +18,6 @@ public class Sponge : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-
     }
 
 
@@ -34,10 +34,17 @@ public class Sponge : MonoBehaviour {
             }
         }
 
-        if (isDragging)
+        if (isDragging && cursorController.cleaner)
         {
             Renderer renderer = target.GetComponent<Renderer>();
+            cursorController.spongeSprite.transform.position = Input.mousePosition;
+            cursorController.spongeSprite.SetActive(true);
             Clean(renderer);
+        }
+
+        if (!cursorController.cleaner)
+        {
+            cursorController.spongeSprite.SetActive(false);
         }
 
         if (Input.GetMouseButtonUp(0))
