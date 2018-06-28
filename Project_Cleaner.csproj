@@ -76,24 +76,15 @@
     <Reference Include="UnityEngine.HoloLens">
       <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
     </Reference>
-<<<<<<< HEAD
-=======
-    <Reference Include="UnityEngine.StandardEvents">
-      <HintPath>C:/Users/karl_/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.10/UnityEngine.StandardEvents.dll</HintPath>
-    </Reference>
->>>>>>> 870e62d602949a418b08b81b737b7492e9b373e6
-    <Reference Include="TextMeshPro-2017.1-Runtime">
-      <HintPath>Assets/Viktoria/TextMesh Pro/Plugins/Editor DLL/TextMeshPro-2017.1-Runtime.dll</HintPath>
-    </Reference>
     <Reference Include="TextMeshPro-2017.1-Editor">
       <HintPath>Assets/Viktoria/TextMesh Pro/Plugins/Editor DLL/TextMeshPro-2017.1-Editor.dll</HintPath>
     </Reference>
-<<<<<<< HEAD
+    <Reference Include="TextMeshPro-2017.1-Runtime">
+      <HintPath>Assets/Viktoria/TextMesh Pro/Plugins/Editor DLL/TextMeshPro-2017.1-Runtime.dll</HintPath>
+    </Reference>
     <Reference Include="Managed/Mono.Cecil">
       <HintPath>C:/Program Files/Unity/Editor/Data\Managed/Mono.Cecil.dll</HintPath>
     </Reference>
-=======
->>>>>>> 870e62d602949a418b08b81b737b7492e9b373e6
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Dani\Scripts\DragAndDrop.cs" />
