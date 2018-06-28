@@ -55,7 +55,7 @@ public class Sponge : MonoBehaviour {
         rend.material.color = color;
         Debug.Log("Alpha: " + color.a);
 
-        if (color.a <= -1.3f)
+        if (color.a <= 0f)
         {
             Destroy(rend.gameObject);
             scoreManager.score += 100;
