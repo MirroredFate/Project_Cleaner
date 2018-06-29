@@ -5,9 +5,14 @@ using UnityEngine;
 public class DragAndDrop : MonoBehaviour {
 
     private bool _mouseState;
+
+    //[HideInInspector]
+    public bool isGrabbing = false;
+
     public GameObject Target;
     public Vector3 screenSpace;
     public Vector3 offset;
+    public CursorController cursorController;
 
     // Use this for initialization
     void Start()
@@ -32,9 +37,11 @@ public class DragAndDrop : MonoBehaviour {
         if (Input.GetMouseButtonUp(0))
         {
             _mouseState = false;
+            isGrabbing = false;
         }
-        if (_mouseState)
+        if (_mouseState && cursorController.grabber)
         {
+            isGrabbing = true;
             //keep track of the mouse position
             var curScreenSpace = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenSpace.z);
 

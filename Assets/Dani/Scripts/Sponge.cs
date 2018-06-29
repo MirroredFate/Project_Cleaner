@@ -10,9 +10,8 @@ public class Sponge : MonoBehaviour {
     [Range(0.1f, 1f)]
     public float cleaningSpeed = 0.5f;
 
-    float alpha = 255f;
-    bool isDragging = false;
-    bool foundDirt;
+    public bool isDragging = false;
+
     GameObject target;
 
 
@@ -29,22 +28,19 @@ public class Sponge : MonoBehaviour {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray.origin, ray.direction * 10, out hit))
             {
-                target = hit.collider.gameObject;
-                isDragging = true;
+                if(hit.transform.tag == "Dirt")
+                {
+                    target = hit.collider.gameObject;
+                    isDragging = true;
+                }
+                
             }
         }
 
         if (isDragging && cursorController.cleaner)
         {
-            Renderer renderer = target.GetComponent<Renderer>();
-            cursorController.spongeSprite.transform.position = Input.mousePosition;
-            cursorController.spongeSprite.SetActive(true);
+            Renderer renderer = target.GetComponent<Renderer>();;
             Clean(renderer);
-        }
-
-        if (!cursorController.cleaner)
-        {
-            cursorController.spongeSprite.SetActive(false);
         }
 
         if (Input.GetMouseButtonUp(0))
@@ -66,6 +62,7 @@ public class Sponge : MonoBehaviour {
         {
             Destroy(rend.gameObject);
             scoreManager.score += 100;
+            isDragging = false;
         }
     }
 
