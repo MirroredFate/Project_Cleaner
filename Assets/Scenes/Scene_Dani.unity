@@ -249,7 +249,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerText: {fileID: 1867159091}
   gameOverScreen: {fileID: 1880461734}
-  startTime: 60
+  startTime: 11
 --- !u!4 &247212256
 Transform:
   m_ObjectHideFlags: 0
@@ -1592,7 +1592,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 247212253}
         m_MethodName: RestartScene
         m_Mode: 1
         m_Arguments:
