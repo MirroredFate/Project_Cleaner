@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class ScoreManager : MonoBehaviour {
 
     public Text scoreText;
+    public Text gameOverText;
 
     [HideInInspector]
     public int score;
@@ -18,6 +19,8 @@ public class ScoreManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         scoreText.text = score.ToString();
+
+        gameOverText.text = "Score: " + score;
 
 	}
 }
