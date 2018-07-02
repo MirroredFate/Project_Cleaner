@@ -14,10 +14,13 @@ public class DragAndDrop : MonoBehaviour {
     public Vector3 offset;
     public CursorController cursorController;
 
+    GameObject target = null;
+    string objectTag;
+
     // Use this for initialization
     void Start()
     {
-
+        objectTag = Target.tag;
     }
 
     // Update is called once per frame
@@ -26,12 +29,19 @@ public class DragAndDrop : MonoBehaviour {
         // Debug.Log(_mouseState);
         if (Input.GetMouseButtonDown(0))
         {
-            RaycastHit hitInfo;
-            if (Target == GetClickedObject(out hitInfo))
+            RaycastHit hit;
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+            if (Physics.Raycast(ray.origin, ray.direction * 10, out hit))
+            {
+                target = hit.collider.gameObject;
+            }
+            
+            if (target.tag == objectTag)
             {
                 _mouseState = true;
-                screenSpace = Camera.main.WorldToScreenPoint(Target.transform.position);
-                offset = Target.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenSpace.z));
+                screenSpace = Camera.main.WorldToScreenPoint(target.transform.position);
+                offset = target.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenSpace.z));
             }
         }
         if (Input.GetMouseButtonUp(0))
@@ -49,20 +59,8 @@ public class DragAndDrop : MonoBehaviour {
             var curPosition = Camera.main.ScreenToWorldPoint(curScreenSpace) + offset;
 
             //update the position of the object in the world
-            Target.transform.position = curPosition;
+            target.transform.position = curPosition;
         }
     }
 
-
-    GameObject GetClickedObject(out RaycastHit hit)
-    {
-        GameObject target = null;
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray.origin, ray.direction * 10, out hit))
-        {
-            target = hit.collider.gameObject;
-        }
-
-        return target;
-    }
 }
