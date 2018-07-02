@@ -14,34 +14,57 @@ public class CursorController : MonoBehaviour {
     public Sprite cleanerSprite;
 
     Image sprite;
+    [SerializeField]
+    int spriteCount;
+    GameObject spriteObject;
 
     // Use this for initialization
     void Start () {
         sprite = spongeSprite.GetComponent<Image>();
         sprite.gameObject.SetActive(false);
+        spriteCount = 0;
 	}
 	
 	// Update is called once per frame
 	void Update () {
         if (grabber && grab.isGrabbing)
         {
+            if(spriteCount < 1)
+            {
+                CreateSprite();
+            }
             sprite.sprite = grabSprite;
             sprite.gameObject.SetActive(true);
         }
         else if(cleaner && sponge.isDragging)
         {
+            if (spriteCount < 1)
+            {
+                CreateSprite();
+            }
             sprite.sprite = cleanerSprite;
             sprite.gameObject.SetActive(true);
         }
         else
         {
-            sprite.gameObject.SetActive(false);
+            Destroy(spriteObject);
+            spriteCount = 0;
         }
         
-
-        spongeSprite.transform.position = Input.mousePosition;
+        if(spriteCount == 1)
+        {
+            spriteObject.transform.position = Input.mousePosition;
+        }
     }
 
+    private void CreateSprite()
+    {
+        spriteObject = Instantiate(spongeSprite, Input.mousePosition, Quaternion.identity, transform);
+        //spriteObject.transform.localScale *= 10;
+        //spriteObject.transform.parent = transform;
+        sprite = spriteObject.GetComponent<Image>();
+        spriteCount++;
+    }
 
     public void GrabIconClick()
     {
