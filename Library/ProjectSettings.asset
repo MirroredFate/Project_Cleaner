@@ -6,11 +6,11 @@ PlayerSettings:
   serializedVersion: 12
   productGUID: 81b9e3feff02bac4498e2e2f254423a3
   AndroidProfiler: 0
-  defaultScreenOrientation: 4
+  defaultScreenOrientation: 3
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
+  companyName: TeamCleanUp
   productName: Project_Cleaner
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
@@ -138,9 +138,10 @@ PlayerSettings:
       depthFormat: 1
   protectGraphicsMemory: 0
   useHDRDisplay: 0
-  targetPixelDensity: 0
+  targetPixelDensity: 200
   resolutionScalingMode: 0
-  applicationIdentifier: {}
+  applicationIdentifier:
+    Android: TCU.TeamCleanUp.Project_Cleaner
   buildNumber: {}
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 16
