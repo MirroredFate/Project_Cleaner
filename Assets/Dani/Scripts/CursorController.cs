@@ -12,10 +12,10 @@ public class CursorController : MonoBehaviour {
     public bool cleaner = false;
     public Sprite grabSprite;
     public Sprite cleanerSprite;
+    int spriteCount;
 
     Image sprite;
     [SerializeField]
-    int spriteCount;
     GameObject spriteObject;
 
     // Use this for initialization

@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Scene_Viktoria.unity
+- path: Assets/Scenes/Scene_Dani.unity
   isLoaded: 1
   isActive: 1
