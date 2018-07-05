@@ -35,14 +35,14 @@ public class DragAndDrop : MonoBehaviour {
             if (Physics.Raycast(ray.origin, ray.direction * 10, out hit))
             {
                 target = hit.collider.gameObject;
+                if (target.tag == objectTag)
+                {
+                    _mouseState = true;
+                    screenSpace = Camera.main.WorldToScreenPoint(target.transform.position);
+                    offset = target.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenSpace.z));
+                }
             }
             
-            if (target.tag == objectTag)
-            {
-                _mouseState = true;
-                screenSpace = Camera.main.WorldToScreenPoint(target.transform.position);
-                offset = target.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenSpace.z));
-            }
         }
         if (Input.GetMouseButtonUp(0))
         {
