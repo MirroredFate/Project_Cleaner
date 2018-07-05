@@ -15,6 +15,7 @@ public class CursorController : MonoBehaviour {
     int spriteCount;
 
     Image sprite;
+
     [SerializeField]
     GameObject spriteObject;
 

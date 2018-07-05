@@ -44,4 +44,16 @@ public class Trashbin : MonoBehaviour {
 
         }
     }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (clicked == false)  
+        {
+            if (other.tag == "Trash")
+            {
+                Destroy(other.transform.gameObject);
+                scoreManager.score += 100;
+            }
+        }
+    }
 }
