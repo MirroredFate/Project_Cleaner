@@ -7,12 +7,17 @@ public class Trashbin : MonoBehaviour {
     public Transform target;
 
     public ScoreManager scoreManager;
+    public float xOffset = 0f;
+    public float yOffset = 0f;
+    public float zOffset = 0f;
+
 
     bool clicked = false;
+    Vector3 linePos;
 
 	// Use this for initialization
 	void Start () {
-		
+        linePos = new Vector3(transform.position.x + xOffset, transform.position.y + yOffset, transform.position.z + zOffset);
 	}
 	
 	// Update is called once per frame
@@ -31,9 +36,9 @@ public class Trashbin : MonoBehaviour {
 
         RaycastHit hit;
 
-        Debug.DrawLine(transform.position, target.position, Color.red);
+        Debug.DrawLine(linePos, target.position, Color.red);
 
-        if (Physics.Linecast(transform.position, target.position, out hit))
+        if (Physics.Linecast(linePos, target.position, out hit))
         {
             Debug.Log("blocked by: " + hit.transform.gameObject.name);
             if(clicked == false)
@@ -51,6 +56,7 @@ public class Trashbin : MonoBehaviour {
         {
             if (other.tag == "Trash")
             {
+                Debug.Log("Destroying Trash");
                 Destroy(other.transform.gameObject);
                 scoreManager.score += 100;
             }

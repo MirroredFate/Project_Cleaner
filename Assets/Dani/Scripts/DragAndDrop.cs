@@ -9,6 +9,8 @@ public class DragAndDrop : MonoBehaviour {
     //[HideInInspector]
     public bool isGrabbing = false;
 
+    public PhoneBehaviour Intro;
+    public TimerBehaviour gameOver;
     public GameObject Target;
     public Vector3 screenSpace;
     public Vector3 offset;
@@ -26,40 +28,43 @@ public class DragAndDrop : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        // Debug.Log(_mouseState);
-        if (Input.GetMouseButtonDown(0))
+        if (!Intro.intro && !gameOver.gameOver)
         {
-            RaycastHit hit;
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-            if (Physics.Raycast(ray.origin, ray.direction * 10, out hit))
+            // Debug.Log(_mouseState);
+            if (Input.GetMouseButtonDown(0))
             {
-                target = hit.collider.gameObject;
-                if (target.tag == objectTag)
+                RaycastHit hit;
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+                if (Physics.Raycast(ray.origin, ray.direction * 10, out hit))
                 {
-                    _mouseState = true;
-                    screenSpace = Camera.main.WorldToScreenPoint(target.transform.position);
-                    offset = target.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenSpace.z));
+                    target = hit.collider.gameObject;
+                    if (target.tag == objectTag)
+                    {
+                        _mouseState = true;
+                        screenSpace = Camera.main.WorldToScreenPoint(target.transform.position);
+                        offset = target.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenSpace.z));
+                    }
                 }
+
             }
-            
-        }
-        if (Input.GetMouseButtonUp(0))
-        {
-            _mouseState = false;
-            isGrabbing = false;
-        }
-        if (_mouseState && cursorController.grabber)
-        {
-            isGrabbing = true;
-            //keep track of the mouse position
-            var curScreenSpace = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenSpace.z);
+            if (Input.GetMouseButtonUp(0))
+            {
+                _mouseState = false;
+                isGrabbing = false;
+            }
+            if (_mouseState && cursorController.grabber)
+            {
+                isGrabbing = true;
+                //keep track of the mouse position
+                var curScreenSpace = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenSpace.z);
 
-            //convert the screen mouse position to world point and adjust with offset
-            var curPosition = Camera.main.ScreenToWorldPoint(curScreenSpace) + offset;
+                //convert the screen mouse position to world point and adjust with offset
+                var curPosition = Camera.main.ScreenToWorldPoint(curScreenSpace) + offset;
 
-            //update the position of the object in the world
-            target.transform.position = curPosition;
+                //update the position of the object in the world
+                target.transform.position = curPosition;
+            }
         }
     }
 

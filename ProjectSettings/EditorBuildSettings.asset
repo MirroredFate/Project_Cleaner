@@ -5,9 +5,9 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Main_Menu.unity
     guid: c040843f9cdef4749810d82e6bdff370
   - enabled: 1
-    path: Assets/Scenes/Scene_Dani.unity
-    guid: 57f7e7eb4fd888a4ea43dbf0c70bbe8d
+    path: Assets/Scenes/Scene_Viktoria.unity
+    guid: 9b229d021f1799b499e40ca620c5a622

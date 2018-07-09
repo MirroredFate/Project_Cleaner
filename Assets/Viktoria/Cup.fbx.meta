@@ -1,17 +1,17 @@
 fileFormatVersion: 2
-guid: cc42aa664a1314e4cbd9550af9eaf18f
-timeCreated: 1530783333
+guid: caa3ff3bc55993243b59734424ad38db
+timeCreated: 1531120711
 licenseType: Free
 ModelImporter:
   serializedVersion: 21
   fileIDToRecycleName:
     100000: Camera
-    100002: //RootNode
-    100004: Cup
+    100002: Cup
+    100004: //RootNode
     100006: Lamp
     400000: Camera
-    400002: //RootNode
-    400004: Cup
+    400002: Cup
+    400004: //RootNode
     400006: Lamp
     2000000: Camera
     2300000: Cup
