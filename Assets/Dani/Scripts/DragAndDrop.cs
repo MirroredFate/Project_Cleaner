@@ -11,18 +11,16 @@ public class DragAndDrop : MonoBehaviour {
 
     public PhoneBehaviour Intro;
     public TimerBehaviour gameOver;
-    public GameObject Target;
     public Vector3 screenSpace;
     public Vector3 offset;
     public CursorController cursorController;
 
     GameObject target = null;
-    string objectTag;
 
     // Use this for initialization
     void Start()
     {
-        objectTag = Target.tag;
+
     }
 
     // Update is called once per frame
@@ -39,7 +37,7 @@ public class DragAndDrop : MonoBehaviour {
                 if (Physics.Raycast(ray.origin, ray.direction * 10, out hit))
                 {
                     target = hit.collider.gameObject;
-                    if (target.tag == objectTag)
+                    if (target.tag == "Trash")
                     {
                         _mouseState = true;
                         screenSpace = Camera.main.WorldToScreenPoint(target.transform.position);

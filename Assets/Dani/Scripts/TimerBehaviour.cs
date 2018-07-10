@@ -10,8 +10,14 @@ public class TimerBehaviour : MonoBehaviour {
     public int startTime = 60;
     public PhoneBehaviour intro;
     public bool gameOver = false;
+    public ScoreManager scoreManager;
 
-    private string timeText;
+    [HideInInspector]
+    public string timeText;
+
+    [HideInInspector]
+    public float timeTaken;
+
     private float time;
     private float intTime;
     
@@ -27,10 +33,11 @@ public class TimerBehaviour : MonoBehaviour {
 
         if (!intro.intro)
         {
-            if (!gameOver)
+            if (!gameOver && !scoreManager.victory)
             {
                 time -= Time.deltaTime;
                 intTime -= Time.deltaTime;
+                timeTaken += Time.deltaTime;
             }
             if (intTime >= 10)
             {
@@ -48,13 +55,9 @@ public class TimerBehaviour : MonoBehaviour {
                 gameOver = true;
             }
 
-            if (gameOver)
+            if (gameOver || scoreManager.victory)
             {
                 gameOverScreen.SetActive(true);
-            }
-            else
-            {
-                gameOverScreen.SetActive(false);
             }
 
             timerText.text = timeText;

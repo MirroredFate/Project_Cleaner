@@ -65,6 +65,7 @@ public class Sponge : MonoBehaviour {
         {
             Destroy(rend.gameObject);
             scoreManager.score += 100;
+            scoreManager.cleanedTrash++;
             isDragging = false;
         }
     }

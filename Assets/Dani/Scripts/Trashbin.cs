@@ -43,8 +43,11 @@ public class Trashbin : MonoBehaviour {
             Debug.Log("blocked by: " + hit.transform.gameObject.name);
             if(clicked == false)
             {
+                Debug.Log("giving you score... ");
                 Destroy(hit.transform.gameObject);
+                scoreManager.cleanedTrash += 1;
                 scoreManager.score += 100;
+                
             }
 
         }
@@ -59,6 +62,7 @@ public class Trashbin : MonoBehaviour {
                 Debug.Log("Destroying Trash");
                 Destroy(other.transform.gameObject);
                 scoreManager.score += 100;
+                scoreManager.cleanedTrash += 1;
             }
         }
     }

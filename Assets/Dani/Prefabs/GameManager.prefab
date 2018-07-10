@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 114626088666465548}
   - component: {fileID: 114373229075798404}
   - component: {fileID: 114107166033936508}
+  - component: {fileID: 114701271311838698}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -53,6 +54,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddd360274b52a21468e09a8c5c9f95c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameOverText: {fileID: 0}
+  scoreText: {fileID: 0}
+  scoreManager: {fileID: 114373229075798404}
+  timer: {fileID: 114626088666465548}
 --- !u!114 &114373229075798404
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -65,8 +70,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 0}
+  scoreUI: {fileID: 0}
   gameOverText: {fileID: 0}
+  amountOfTrash: 10
   score: 0
+  victory: 0
+  cleanedTrash: 0
 --- !u!114 &114626088666465548
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -82,3 +91,22 @@ MonoBehaviour:
   gameOverScreen: {fileID: 0}
   startTime: 60
   intro: {fileID: 0}
+  gameOver: 0
+  scoreManager: {fileID: 114373229075798404}
+  timeText: 
+  timeTaken: 0
+--- !u!114 &114701271311838698
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1448024108037354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: debb24e4ab730f041b109eb326b55b26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  victoryText: {fileID: 0}
+  scoreText: {fileID: 0}
+  scoreManager: {fileID: 114373229075798404}
+  timer: {fileID: 114626088666465548}

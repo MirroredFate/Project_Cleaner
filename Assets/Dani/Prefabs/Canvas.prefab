@@ -221,7 +221,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1833548459159030
 GameObject:
   m_ObjectHideFlags: 0
@@ -701,17 +701,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 50
-    m_Alignment: 4
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'GAME OVER
-
-
-
-
 
 '
 --- !u!114 &114416802899461028
@@ -776,6 +772,7 @@ MonoBehaviour:
   scoreManager: {fileID: 0}
   cursorController: {fileID: 114208188665366802}
   Intro: {fileID: 114355954651081356}
+  gameOver: {fileID: 0}
   cleaningSpeed: 0.5
   isDragging: 0
 --- !u!114 &114547626604078620
@@ -965,7 +962,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 45
-    m_Alignment: 4
+    m_Alignment: 7
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -1051,6 +1048,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isGrabbing: 0
   Intro: {fileID: 114355954651081356}
+  gameOver: {fileID: 0}
   Target: {fileID: 0}
   screenSpace: {x: 0, y: 0, z: 0}
   offset: {x: 0, y: 0, z: 0}
@@ -1325,7 +1323,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.09175334, y: 0.26740387}
   m_AnchorMax: {x: 0.896, y: 0.44964164}
-  m_AnchoredPosition: {x: 1.5, y: -1.199997}
+  m_AnchoredPosition: {x: 1.5, y: -1.1999931}
   m_SizeDelta: {x: 3, y: 4.5999985}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224116491921255384
@@ -1362,8 +1360,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.20447804, y: 0.47484908}
   m_AnchorMax: {x: 0.777, y: 0.8246038}
-  m_AnchoredPosition: {x: 2.500019, y: -47.319}
-  m_SizeDelta: {x: 129.79999, y: 208.5}
+  m_AnchoredPosition: {x: 2.500019, y: 59.4}
+  m_SizeDelta: {x: 129.8, y: 8.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224257080459154412
 RectTransform:
@@ -1551,8 +1549,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.24648318, y: 0.44964164}
   m_AnchorMax: {x: 0.74221957, y: 0.601151}
-  m_AnchoredPosition: {x: 1.4999847, y: -8}
-  m_SizeDelta: {x: 151.79999, y: 271.5}
+  m_AnchoredPosition: {x: 1.4999847, y: 12.2}
+  m_SizeDelta: {x: 151.8, y: 24.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224669788617738870
 RectTransform:

@@ -6,10 +6,18 @@ using UnityEngine.UI;
 public class ScoreManager : MonoBehaviour {
 
     public Text scoreText;
+    public Text scoreUI;
     public Text gameOverText;
+    public int amountOfTrash;
 
     [HideInInspector]
     public int score;
+
+    [HideInInspector]
+    public bool victory = false;
+
+    //[HideInInspector]
+    public int cleanedTrash = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -18,9 +26,12 @@ public class ScoreManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        scoreText.text = score.ToString();
 
-        gameOverText.text = "Score: " + score;
+        if(cleanedTrash == amountOfTrash)
+        {
+            victory = true;
+        }
 
+        scoreUI.text = score.ToString();
 	}
 }
