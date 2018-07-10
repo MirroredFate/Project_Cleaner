@@ -72,7 +72,8 @@ MonoBehaviour:
   scoreText: {fileID: 0}
   scoreUI: {fileID: 0}
   gameOverText: {fileID: 0}
-  amountOfTrash: 10
+  trashParent: {fileID: 0}
+  amountOfTrash: 0
   score: 0
   victory: 0
   cleanedTrash: 0

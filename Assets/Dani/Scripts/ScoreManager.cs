@@ -8,6 +8,8 @@ public class ScoreManager : MonoBehaviour {
     public Text scoreText;
     public Text scoreUI;
     public Text gameOverText;
+    public GameObject trashParent;
+
     public int amountOfTrash;
 
     [HideInInspector]
@@ -21,11 +23,13 @@ public class ScoreManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
+        amountOfTrash = trashParent.transform.childCount;
+
+    }
+
+    // Update is called once per frame
+    void Update () {
+
 
         if(cleanedTrash == amountOfTrash)
         {
@@ -33,5 +37,8 @@ public class ScoreManager : MonoBehaviour {
         }
 
         scoreUI.text = score.ToString();
+
 	}
+
+    
 }
