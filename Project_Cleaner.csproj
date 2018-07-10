@@ -98,6 +98,7 @@
     <Compile Include="Assets\Dani\Scripts\PhoneBehaviour.cs" />
     <Compile Include="Assets\Dani\Scripts\ScoreManager.cs" />
     <Compile Include="Assets\Dani\Scripts\Sponge.cs" />
+    <Compile Include="Assets\Dani\Scripts\Throw.cs" />
     <Compile Include="Assets\Dani\Scripts\TimerBehaviour.cs" />
     <Compile Include="Assets\Dani\Scripts\Trashbin.cs" />
     <Compile Include="Assets\Dani\Scripts\VictoryController.cs" />
