@@ -12,6 +12,8 @@ public class GameOverController : MonoBehaviour {
     public TimerBehaviour timer;
 
 
+
+
     Scene curScene;
 
     private void Start()

@@ -11,6 +11,10 @@ public class TimerBehaviour : MonoBehaviour {
     public PhoneBehaviour intro;
     public bool gameOver = false;
     public ScoreManager scoreManager;
+    public GameObject score;
+    public GameObject timerWindow;
+    public GameObject GrabIcon;
+    public GameObject CleanIcon;
 
     [HideInInspector]
     public string timeText;
@@ -58,6 +62,10 @@ public class TimerBehaviour : MonoBehaviour {
             if (gameOver || scoreManager.victory)
             {
                 gameOverScreen.SetActive(true);
+                score.SetActive(false);
+                timerWindow.SetActive(false);
+                GrabIcon.SetActive(false);
+                CleanIcon.SetActive(false);
             }
 
             timerText.text = timeText;

@@ -95,6 +95,10 @@ MonoBehaviour:
   intro: {fileID: 0}
   gameOver: 0
   scoreManager: {fileID: 114373229075798404}
+  score: {fileID: 0}
+  timerWindow: {fileID: 0}
+  GrabIcon: {fileID: 0}
+  CleanIcon: {fileID: 0}
   timeText: 
   timeTaken: 0
 --- !u!114 &114701271311838698
