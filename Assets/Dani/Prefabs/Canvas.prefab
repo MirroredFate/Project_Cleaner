@@ -382,7 +382,10 @@ MonoBehaviour:
   cursorController: {fileID: 114208188665366802}
   Intro: {fileID: 114355954651081356}
   gameOver: {fileID: 0}
-  cleaningSpeed: 0.5
+  floatUpText: {fileID: 1750927015484704, guid: c81fd3935a3f47e4184be6e3728abeb2,
+    type: 2}
+  canvas: {fileID: 1658922700743318}
+  cleaningSpeed: 0.75
   isDragging: 0
 --- !u!114 &114159248756763886
 MonoBehaviour:
@@ -476,7 +479,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spongeSprite: {fileID: 1377249597766492, guid: fca58ab10d599df4dae0fb4487fe8d34,
     type: 2}
-  sponge: {fileID: 0}
+  sponge: {fileID: 114044575915229936}
   grab: {fileID: 0}
   grabber: 1
   cleaner: 0
@@ -745,9 +748,9 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: eb13bd8a4feadd848ac735c08a604a91, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 65282ae1086ceee4baa09cad8fd95d47, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -1394,10 +1397,10 @@ RectTransform:
   m_Father: {fileID: 224539889069874718}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.531, y: 0.0023262035}
-  m_AnchorMax: {x: 0.6016555, y: 0.108}
-  m_AnchoredPosition: {x: 0.19000244, y: 0.4840393}
-  m_SizeDelta: {x: 0.34000397, y: -0.08000183}
+  m_AnchorMin: {x: 0.5144747, y: 0}
+  m_AnchorMax: {x: 0.6204007, y: 0.13939847}
+  m_AnchoredPosition: {x: -1, y: 1.8623962}
+  m_SizeDelta: {x: -1.2999992, y: 4.200001}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224281072722319726
 RectTransform:

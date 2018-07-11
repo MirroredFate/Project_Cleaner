@@ -91,6 +91,7 @@
     <Compile Include="Assets\Dani\Scripts\DragAndDrop.cs" />
     <Compile Include="Assets\Dani\Scripts\DragAndDropV2.cs" />
     <Compile Include="Assets\Dani\Scripts\DragAndDropV3.cs" />
+    <Compile Include="Assets\Dani\Scripts\FloatAndFade.cs" />
     <Compile Include="Assets\Dani\Scripts\GameOverController.cs" />
     <Compile Include="Assets\Dani\Scripts\ObjectSpawnBehaviour.cs" />
     <Compile Include="Assets\Dani\Scripts\OOBDetection.cs" />

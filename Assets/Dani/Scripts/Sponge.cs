@@ -9,6 +9,9 @@ public class Sponge : MonoBehaviour {
     public PhoneBehaviour Intro;
     public TimerBehaviour gameOver;
 
+    public GameObject floatUpText;
+    public GameObject canvas;
+
     [Range(0.1f, 1f)]
     public float cleaningSpeed = 0.5f;
 
@@ -30,10 +33,12 @@ public class Sponge : MonoBehaviour {
             {
                 RaycastHit hit;
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-                if (Physics.Raycast(ray.origin, ray.direction * 10, out hit))
+                if (Physics.Raycast(ray.origin, ray.direction * 100, out hit))
                 {
+                    //Debug.Log(hit.transform.gameObject.name);
                     if (hit.transform.tag == "Dirt")
                     {
+                        //Debug.Log("Dreck!");
                         target = hit.collider.gameObject;
                         isDragging = true;
                     }
@@ -59,15 +64,24 @@ public class Sponge : MonoBehaviour {
         Color color = rend.material.color;
         color.a -= Time.deltaTime * cleaningSpeed;
         rend.material.color = color;
-        Debug.Log("Alpha: " + color.a);
+        //Debug.Log("Alpha: " + color.a);
 
         if (color.a <= 0f)
         {
+            SpawnText();
             Destroy(rend.gameObject);
             scoreManager.score += 100;
             scoreManager.cleanedTrash++;
             isDragging = false;
         }
+    }
+
+    void SpawnText()
+    {
+        Vector2 screenPoint = Camera.main.WorldToScreenPoint(target.transform.position);
+        GameObject UI_Text = Instantiate(floatUpText, screenPoint, Quaternion.identity) as GameObject;
+        UI_Text.transform.SetParent(canvas.transform);
+        //UI_Text.GetComponent<RectTransform>().anchoredPosition = screenPoint - this.GetComponent<RectTransform>().sizeDelta / 2f;
     }
 
 }
