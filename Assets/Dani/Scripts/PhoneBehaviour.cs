@@ -10,7 +10,7 @@ public class PhoneBehaviour : MonoBehaviour {
     public GameObject phoneObject;
     public GameObject introText;
 
-    [HideInInspector]
+    //[HideInInspector]
     public bool intro = true;
 
     bool textTimer;

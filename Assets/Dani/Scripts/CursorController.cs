@@ -7,7 +7,7 @@ public class CursorController : MonoBehaviour {
 
     public GameObject spongeSprite;
     public Sponge sponge;
-    public DragAndDrop grab;
+    public DragAndDropV3 grab;
     public bool grabber = true;
     public bool cleaner = false;
     public Sprite grabSprite;
@@ -28,16 +28,16 @@ public class CursorController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (grabber && grab.isGrabbing)
-        {
-            if(spriteCount < 1)
-            {
-                CreateSprite();
-            }
-            sprite.sprite = grabSprite;
-            sprite.gameObject.SetActive(true);
-        }
-        else if(cleaner && sponge.isDragging)
+        //if (grabber && grab.isGrabbing)
+        //{
+        //    if(spriteCount < 1)
+        //    {
+        //        CreateSprite();
+        //    }
+        //    sprite.sprite = grabSprite;
+        //    sprite.gameObject.SetActive(true);
+        //}
+        if(cleaner && sponge.isDragging)
         {
             if (spriteCount < 1)
             {

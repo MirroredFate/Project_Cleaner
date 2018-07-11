@@ -10,6 +10,8 @@ public class Trashbin : MonoBehaviour {
     public float xOffset = 0f;
     public float yOffset = 0f;
     public float zOffset = 0f;
+    public GameObject floatUpText;
+    public GameObject canvas;
 
 
     bool clicked = false;
@@ -44,6 +46,7 @@ public class Trashbin : MonoBehaviour {
             if(clicked == false)
             {
                 Debug.Log("giving you score... ");
+                SpawnText();
                 Destroy(hit.transform.gameObject);
                 scoreManager.cleanedTrash += 1;
                 scoreManager.score += 100;
@@ -60,10 +63,19 @@ public class Trashbin : MonoBehaviour {
             if (other.tag == "Trash")
             {
                 Debug.Log("Destroying Trash");
+                SpawnText();
                 Destroy(other.transform.gameObject);
                 scoreManager.score += 100;
                 scoreManager.cleanedTrash += 1;
             }
         }
+    }
+
+    void SpawnText()
+    {
+        Vector2 screenPoint = Camera.main.WorldToScreenPoint(transform.position);
+        GameObject UI_Text = Instantiate(floatUpText, screenPoint, Quaternion.identity) as GameObject;
+        UI_Text.transform.SetParent(canvas.transform);
+        //UI_Text.GetComponent<RectTransform>().anchoredPosition = screenPoint - this.GetComponent<RectTransform>().sizeDelta / 2f;
     }
 }
