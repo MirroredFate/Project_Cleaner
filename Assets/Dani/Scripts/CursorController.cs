@@ -7,7 +7,7 @@ public class CursorController : MonoBehaviour {
 
     public GameObject spongeSprite;
     public Sponge sponge;
-    public DragAndDrop grab;
+    public DragAndDropV3 grab;
     public bool grabber = true;
     public bool cleaner = false;
     public Sprite grabSprite;

@@ -24,7 +24,7 @@ public class Sponge : MonoBehaviour {
 
     private void Update()
     {
-        if (!Intro.intro && !gameOver.gameOver)
+        if (!Intro.intro && !gameOver.gameOver && cursorController.cleaner)
         {
             if (Input.GetMouseButton(0))
             {
@@ -41,7 +41,7 @@ public class Sponge : MonoBehaviour {
                 }
             }
 
-            if (isDragging && cursorController.cleaner)
+            if (isDragging)
             {
                 Renderer renderer = target.GetComponent<Renderer>(); ;
                 Clean(renderer);

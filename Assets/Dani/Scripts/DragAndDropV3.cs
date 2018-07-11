@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class DragAndDropV3 : MonoBehaviour {
 
+    public bool isGrabbing = false;
+
+    public PhoneBehaviour Intro;
+    public TimerBehaviour gameOver;
+    public CursorController cursorController;
+
     GameObject gObj = null;
     Plane objPlane;
     Vector3 lastPos;
@@ -26,38 +32,44 @@ public class DragAndDropV3 : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (!Intro.intro && !gameOver.gameOver && cursorController.grabber)
         {
-            Ray mouseRay = GenerateMouseRay();
-            RaycastHit hit;
-
-            if(Physics.Raycast(mouseRay.origin, mouseRay.direction, out hit) && hit.transform.gameObject.tag == "Trash")
+            if (Input.GetMouseButtonDown(0))
             {
-                gObj = hit.transform.gameObject;
-                gObj.GetComponent<Rigidbody>().velocity = Vector3.zero;
-                objPlane = new Plane(Vector3.up, gObj.transform.position);
+                Ray mouseRay = GenerateMouseRay();
+                RaycastHit hit;
 
+                if (Physics.Raycast(mouseRay.origin, mouseRay.direction, out hit) && hit.transform.gameObject.tag == "Trash")
+                {
+                    gObj = hit.transform.gameObject;
+                    gObj.GetComponent<Rigidbody>().velocity = Vector3.zero;
+                    objPlane = new Plane(Vector3.up, gObj.transform.position);
+
+                    Ray mRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+                    float rayDistance;
+                    objPlane.Raycast(mRay, out rayDistance);
+                    m0 = gObj.transform.position - mRay.GetPoint(rayDistance);
+                }
+            }
+            else if (Input.GetMouseButton(0) && gObj)
+            {
+                isGrabbing = true;
                 Ray mRay = Camera.main.ScreenPointToRay(Input.mousePosition);
                 float rayDistance;
-                objPlane.Raycast(mRay, out rayDistance);
-                m0 = gObj.transform.position - mRay.GetPoint(rayDistance);
+                if (objPlane.Raycast(mRay, out rayDistance))
+                {
+                    gObj.transform.position = mRay.GetPoint(rayDistance) + m0;
+                    velocity = gObj.transform.position - lastPos;
+                    lastPos = gObj.transform.position;
+                }
             }
-        }    	
-        else if (Input.GetMouseButton(0) && gObj)
-        {
-            Ray mRay = Camera.main.ScreenPointToRay(Input.mousePosition);
-            float rayDistance;
-            if(objPlane.Raycast(mRay, out rayDistance))
+            else if (Input.GetMouseButtonUp(0) && gObj)
             {
-                gObj.transform.position = mRay.GetPoint(rayDistance) + m0;
-                velocity = gObj.transform.position - lastPos;
-                lastPos = gObj.transform.position;
+                gObj.GetComponent<Rigidbody>().AddForce(velocity);
+                gObj = null;
+                isGrabbing = false;
             }
         }
-        else if (Input.GetMouseButtonUp(0))
-        {
-            gObj.GetComponent<Rigidbody>().AddForce(velocity * 1000);
-            gObj = null;
-        }
+      
 	}
 }
