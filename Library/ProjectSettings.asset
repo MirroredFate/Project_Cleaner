@@ -141,7 +141,7 @@ PlayerSettings:
   targetPixelDensity: 200
   resolutionScalingMode: 0
   applicationIdentifier:
-    Android: TCU.TeamCleanUp.Project_Cleaner
+    Android: com.TeamCleanUp.Project_Cleaner
   buildNumber: {}
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 16

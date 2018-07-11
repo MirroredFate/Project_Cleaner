@@ -140,10 +140,10 @@ RectTransform:
   m_Father: {fileID: 403814335}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.582, y: 0.28300002}
-  m_AnchorMax: {x: 0.9308572, y: 0.53571415}
-  m_AnchoredPosition: {x: 3.399994, y: -0.70000076}
-  m_SizeDelta: {x: -6.799999, y: -1.2000008}
+  m_AnchorMin: {x: 0.6883477, y: 0.30314064}
+  m_AnchorMax: {x: 0.95000005, y: 0.5298548}
+  m_AnchoredPosition: {x: -3.9000015, y: 7.889}
+  m_SizeDelta: {x: 7.5, y: 2.2229996}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &199057872
 MonoBehaviour:
@@ -508,8 +508,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.70600003, y: 0.7736667}
-  m_AnchoredPosition: {x: -5.7, y: 0.757}
-  m_SizeDelta: {x: -11.3, y: 1.514}
+  m_AnchoredPosition: {x: 28.825, y: 27.429}
+  m_SizeDelta: {x: -57.649, y: -54.857}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &564054543
 MonoBehaviour:
@@ -1184,8 +1184,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 10.591001}
   m_AnchorMin: {x: 0.19275002, y: 0.51738083}
   m_AnchorMax: {x: 0.51458335, y: 0.76033336}
-  m_AnchoredPosition: {x: -13, y: -4.2}
-  m_SizeDelta: {x: -6.199997, y: -36.4}
+  m_AnchoredPosition: {x: 118, y: 30}
+  m_SizeDelta: {x: 117, y: -90.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &994736438
 MonoBehaviour:
@@ -1233,8 +1233,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 75
-  m_fontSizeBase: 75
+  m_fontSize: 200
+  m_fontSizeBase: 200
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1474,8 +1474,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000015259, y: -225}
-  m_SizeDelta: {x: 906.9, y: 559.9}
+  m_AnchoredPosition: {x: 56, y: -516.1}
+  m_SizeDelta: {x: 395.5, y: 441}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1440745950
 MonoBehaviour:
@@ -1496,9 +1496,9 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 62fadb8b33f809540bd22e41bacd28a8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 174277aa67b46ac439b7ceaf76883089, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -2005,8 +2005,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 11.859}
   m_AnchorMin: {x: 0.074, y: 0.72361046}
   m_AnchorMax: {x: 0.28642857, y: 0.88100004}
-  m_AnchoredPosition: {x: 31.9, y: -0.2}
-  m_SizeDelta: {x: 62.3, y: 16.7}
+  m_AnchoredPosition: {x: 72, y: -9.1}
+  m_SizeDelta: {x: 165.4, y: 50.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1816605760
 MonoBehaviour:
@@ -2054,8 +2054,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 75
-  m_fontSizeBase: 75
+  m_fontSize: 200
+  m_fontSizeBase: 200
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2248,7 +2248,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.29500002, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -49.000015, y: -8.800003}
+  m_AnchoredPosition: {x: -80.087, y: -71}
   m_SizeDelta: {x: 98, y: 17.600006}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1976787568
@@ -2298,8 +2298,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 95
-  m_fontSizeBase: 95
+  m_fontSize: 150
+  m_fontSizeBase: 150
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2472,7 +2472,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -40}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2068267446
@@ -2522,8 +2522,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 50
-  m_fontSizeBase: 50
+  m_fontSize: 100
+  m_fontSizeBase: 100
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
