@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/Scene_Viktoria.unity
+=======
+- path: Assets/Scenes/Main_Menu.unity
+>>>>>>> 4e97097e9f683272c18ddfb0b9e20472dfebab08
   isLoaded: 1
   isActive: 1
